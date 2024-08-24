@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_粘性定位</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .paper-header {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: orange;
+        }
+        .item {
+            background-color: gray;
+        }
+        .first{
+            background-color: skyblue;
+            font-size: 40px;
+            position: sticky;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+     <div class="paper-header">头部</div>
+    <!-- 内容区 -->
+     <div class="content">
+        <div class="item">
+            <div class="first">A</div>
+            <div>A1</div>
+            <div>A2</div>
+            <div>A3</div>
+            <div>A4</div>
+            <div>A5</div>
+            <div>A6</div>
+            <div>A7</div>
+            <div>A8</div>
+        </div>
+        <div class="item">
+            <div class="first">B</div>
+            <div>B1</div>
+            <div>B2</div>
+            <div>B3</div>
+            <div>B4</div>
+            <div>B5</div>
+            <div>B6</div>
+            <div>B7</div>
+            <div>B8</div>
+        </div>
+        <div class="item">
+            <div class="first">C</div>
+            <div>C1</div>
+            <div>C2</div>
+            <div>C3</div>
+            <div>C4</div>
+            <div>C5</div>
+            <div>C6</div>
+            <div>C7</div>
+            <div>C8</div>
+        </div>
+     </div>
+</body>
+</html>
