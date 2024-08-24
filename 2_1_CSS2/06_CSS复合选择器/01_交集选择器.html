@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01_交集选择器</title>
+    <style>
+        .rich {
+            color: gold;
+        }
+
+        .beauty {
+            color: red;
+        }
+
+        /* 交集选择器 元素加类一般用的比较多*/
+        p.beauty {
+            color: green;
+        }
+
+        /* 两个类这种，用的少 */
+        .beauty.rich {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="rich">土豪张三</h2>
+    <h2 class="beauty">明星李四</h2>
+    <h2 class="rich beauty">土豪明星王五</h2>
+    <hr>
+    <p class="beauty">小狗佩奇</p>
+    <p class="beauty">小狗旺财</p>
+</body>
+
+</html>
