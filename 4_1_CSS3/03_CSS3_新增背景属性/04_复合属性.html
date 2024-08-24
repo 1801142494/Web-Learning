@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_复合属性</title>
+    
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            margin: 0 auto;
+            font-size: 150px;
+            font-weight: bold;
+            color: transparent;
+            padding: 50px;
+            border: 50px dashed rgba(255, 0, 0, 0.6);
+            
+
+            /* background:颜色 url 重复 位置/大小 原点 裁切
+                            顺序任意*/
+            background: 
+                    orange 
+                    url("../images/bg02.jpg") 
+                    no-repeat 
+                    10px 10px / 300px 300px
+                    border-box
+                    padding-box
+                    ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">你好你好</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_旋转</title>
+
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 200px;
+
+            transform-style: preserve-3d;
+            perspective: 500px;
+            perspective-origin: 102px 102px;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color:rgba(0, 191, 255, 0.7);
+
+            transform: rotateY(180deg);
+
+            /* 背部可见性 */
+            /* backface-visibility: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">你好</div>
+    </div>
+</body>
+</html>
