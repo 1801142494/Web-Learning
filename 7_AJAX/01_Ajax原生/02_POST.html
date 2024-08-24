@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST 请求</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box=document.querySelector('.box');
+        box.addEventListener('mouseenter',()=>{
+            const xhr=new XMLHttpRequest();
+            xhr.open('POST','http://127.0.0.1:3000/server');
+            // 设置请求头
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.setRequestHeader('name','hahaha');
+            // 设置请求体
+            xhr.send('a=100&b=200&c=300');
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4){
+                    if(xhr.status>=200&&xhr.status<300){
+                        box.innerHTML=xhr.response
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

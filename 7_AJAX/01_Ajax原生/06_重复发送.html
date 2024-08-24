@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复发送</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击发送请求</button>
+    <div id="result"></div>
+    <script>
+        const btn = document.querySelector('button');
+        const result = document.querySelector('#result');
+
+         // 解决重复点击，重复发送网络请求
+         let isSend=false
+
+        btn.addEventListener('click', () => {
+            // 判断是否已经在发送
+            if(isSend) return
+            // 点击后设置为true
+            isSend=true
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://127.0.0.1:3000/timeout');
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState ===4){
+                    // 接收到服务器返回，设置为法拉瑟
+                    isSend=false
+                    if(xhr.status>=200&&xhr.status<300){
+                        result.innerText =xhr.response;
+                    }
+                }
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>
