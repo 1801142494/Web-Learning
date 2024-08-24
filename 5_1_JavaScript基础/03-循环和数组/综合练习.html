@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let arr =[]
+        let sum =0
+        let max 
+        let min
+
+        // 获取数据
+        for(let i=0;i<5;i++){
+            arr.push(Number(prompt(`请输入五个年龄,这是第${i+1}个：`)))
+        }
+        console.log(arr)
+
+        // 处理数据
+        arr.sort()
+        // 排序并打印全部年龄
+        document.write(`全部年龄(升序)：${arr}`)
+        document.write(`<br>`)
+
+        // 所有人的总年龄
+        for(let i=0;i<arr.length;i++){
+            sum+=arr[i]
+        }
+        document.write(`总年龄：${sum}`)
+        document.write(`<br>`)
+
+        // 平均年龄
+        document.write(`平均年龄：${sum/arr.length}`)
+        document.write(`<br>`)
+
+        // 打印最大和最小年龄
+        max=arr[0]
+        min=arr[0]
+
+        for(let i=0;i<arr.length;i++){
+           if(max<arr[i]){
+            max=arr[i]
+           }
+           if(min>arr[i]){
+            min=arr[i]
+           }
+        }
+        document.write(`最大年龄：${max},最小年龄：${min}`)
+        document.write(`<br>`)
+    </script>
+</body>
+</html>

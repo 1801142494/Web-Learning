@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let num1 = Number(prompt('请输入第一个数字：'))
+        let num2 = Number(prompt('请输入第二个数字：'))
+        let relation = prompt('请输入两个数字间的运算关系"+","-","*","/"')
+
+        switch (relation) {
+            case '+': 
+                alert(`${num1}${relation}${num2}=${num1 + num2}`)
+                break
+            case '-': 
+                alert(`${num1}${relation}${num2}=${num1 - num2}`)
+                break
+            case '*': 
+                alert(`${num1}${relation}${num2}=${num1 * num2}`)
+                break
+            case '/': 
+                alert(`${num1}${relation}${num2}=${num1 / num2}`)
+                break
+            default:
+                alert('你输入的数据有误')
+                break
+        }
+    </script>
+</body>
+
+</html>

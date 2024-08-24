@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function randomNumberRange(x = 0, y = 0) {
+            return Math.floor(Math.random() * (y - x + 1)) + x
+        }
+
+        function getRandomColor(flag = true) {
+            if (flag) {
+                let hex = '#'
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+                for (let i = 0; i < 6; i++) {
+                    let str = arr[Math.floor(Math.random() * arr.length)]
+                    hex += str
+                }
+
+                return hex
+            } else {
+                let r = randomNumberRange(0, 255)
+                let g = randomNumberRange(0, 255)
+                let b = randomNumberRange(0, 255)
+                return `rgb(${r},${g},${b})`
+            }
+        }
+
+        console.log(getRandomColor(false))
+    </script>
+</body>
+
+</html>
