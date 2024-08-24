@@ -1,0 +1,6 @@
+/* 大屏幕 */
+@media (min-width:992px) and (max-width:1200px) {
+    h1 {
+        background-color: yellowgreen;
+    }
+}

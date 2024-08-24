@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_媒体查询_运算符</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            height: 200px;
+            background-color: gray;
+            text-align: center;
+            line-height: 200px;
+            font-size: 100px;
+        }
+
+        /* 且运算 */
+        /* @media screen and (min-width:700px) and (max-width:800px) */
+
+        /* 或运算 */
+        /* @media screen and (max-width:700px) or (min-width:800px) { */
+
+        /* 否定运算符 */
+        /* @media not screen{
+            h1 {
+                background-color: orange;
+            }
+        } */
+
+
+        /* 解决ie兼容问题,防止老式浏览器因无法识别条件而乱用样式*/
+        @media only screen and (max-width:700px) {
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>你好啊</h1>
+</body>
+
+</html>

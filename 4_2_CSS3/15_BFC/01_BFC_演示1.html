@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>01_BFC_演示1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+        }
+        .outer {
+            width: 500px;
+            height: 400px;
+            background-color: gray;
+
+            /* float: left; */
+            /* position: absolute; */
+            /* display: inline-block; */
+            /* display: table; */
+            /* overflow: hidden; */
+            /* column-count: 1; */
+            /* display: flow-root; */
+            
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .box1 {
+            background-color: orange;
+            margin-top: 50px;
+        }
+        .box2 {
+            background-color: green;
+        }
+        .box3 {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+</body>
+</html>
