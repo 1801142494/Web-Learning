@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //1.匿名函数当参数 
+        // setInterval(function(){
+        //     console.log('一秒执行一次');
+        // },1000)
+
+        function fn() {
+            console.log('一秒执行一次')
+        }
+
+        // 2.具名函数当参数，注意函数不带括号
+        let n = setInterval(fn,3000)
+        console.log(n)
+
+        // 关闭定时器
+        clearInterval(n)
+    </script>
+</body>
+</html>

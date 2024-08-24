@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .aside {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 660px;
+            margin: 400px auto;
+        }
+
+        .neirong {
+            height: 300px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content1 {
+            background-color: red;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content3 {
+            background-color: orange;
+        }
+
+        .content4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aside">
+        <div class="item" data-name="clothing">男装/女装</div>
+        <div class="item" data-name="childClothing">儿童服装/游乐园</div>
+        <div class="item" data-name="electronics">电子产品</div>
+        <div class="item" data-name="film-food">电影/美食</div>
+    </div>
+
+    <div class="content">
+        <div class="neirong content1 clothing">男装/女装</div>
+        <div class="neirong content2 childClothing">儿童服装/游乐园</div>
+        <div class="neirong content3 electronics">电子产品</div>
+        <div class="neirong content4 film-food">电影/美食</div>
+    </div>
+
+    <script>
+        //模块1；点击跳转并改变颜色
+        const aside = document.querySelector('.aside')
+
+        aside.addEventListener('click', function (e) {
+
+            if (e.target.nodeName === 'DIV') {
+                // 排他思想 删除旧的，设置新的
+                const old = document.querySelector('.aside .active')
+                if (old) old.classList.toggle('active')
+                e.target.classList.toggle('active')
+
+                // 设置跳转
+                const top = document.querySelector(`.content .${e.target.dataset.name}`).offsetTop
+                // console.log(top);
+                document.documentElement.scrollTop = top
+            }
+        })
+
+        // 模块2：滑动到特定位置设置对应侧边栏的颜色
+
+        // 找到四个大盒子
+        const clothing = document.querySelector('.content .clothing')
+        const childClothing = document.querySelector('.content .childClothing')
+        const electronics = document.querySelector('.content .electronics')
+        const filmFood = document.querySelector('.content .film-food')
+
+        // 检测页面滚动
+        window.addEventListener('scroll', function () {
+            // 清楚样式
+            const old = document.querySelector('.aside .active')
+            if (old) old.classList.toggle('active')
+
+            const n = document.documentElement.scrollTop
+            // console.log(n);
+            // console.log(clothing.offsetTop);
+
+            if (n >= clothing.offsetTop && n < childClothing.offsetTop) {
+                document.querySelector('[data-name="clothing"]').classList.toggle('active')
+            } else if (n >= childClothing.offsetTop && n < electronics.offsetTop) {
+                document.querySelector('[data-name="childClothing"]').classList.toggle('active')
+            } else if (n >= electronics.offsetTop && n < filmFood.offsetTop) {
+                document.querySelector('[data-name="electronics"]').classList.toggle('active')
+            } else if (n >= filmFood.offsetTop) {
+                document.querySelector('[data-name="film-food"]').classList.toggle('active')
+            }
+        })
+    </script>
+</body>
+
+</html>

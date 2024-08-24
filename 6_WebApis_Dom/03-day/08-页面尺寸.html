@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 当页面发生改变的适合响应
+        window.addEventListener('resize',function(){
+            console.log('页面改变了')
+         
+            // 获取当前窗口页面的宽
+            console.log(document.documentElement.clientWidth)
+        })
+
+        const div =document.querySelector('div')
+        // 获取标签对象的宽
+        console.log(div.clientWidth)
+    </script>
+</body>
+</html>

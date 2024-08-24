@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/1.jpg" alt="">
+
+    <script>
+        let imgArr =[
+            './images/1.jpg',
+            './images/2.jpg',
+            './images/3.jpg',
+            './images/4.jpg',
+            './images/5.jpg'
+        ]
+        
+        const img =document.querySelector('img')
+
+        const src = imgArr[Math.floor(Math.random() * imgArr.length)]
+        console.log(src)
+
+        img.src = src
+    </script>
+</body>
+</html>

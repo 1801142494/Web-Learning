@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer {
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+    <script>
+
+        const outer =document.querySelector('.outer')
+        const inner =document.querySelector('.inner')
+
+        addEventListener('click',function(){
+            alert('window')
+        })
+        outer.addEventListener('click',function(){
+            alert('outer')
+        })
+        inner.addEventListener('click',function(e){
+            alert('inner')
+            // 阻止冒泡
+            e.stopPropagation()
+        })
+    </script>
+</body>
+</html>
