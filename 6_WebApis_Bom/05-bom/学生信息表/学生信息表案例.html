@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生信息管理</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名：<input type="text" class="uname" name="uname" />
+    年龄：<input type="text" class="age" name="age" />
+    性别:
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary" name="salary" />
+    就业城市：<select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+  </form>
+
+  <div class="count">
+    共有<span>0</span>条就业信息
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>录入时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 
+        <tr>
+          <td>1001</td>
+          <td>欧阳霸天</td>
+          <td>19</td>
+          <td>男</td>
+          <td>15000</td>
+          <td>上海</td>
+          <td>
+            <a href="javascript:">删除</a>
+          </td>
+        </tr> 
+        -->
+    </tbody>
+  </table>
+  <script>
+    // 如果没有本地数据，用空数组代替
+    const initData = JSON.parse(localStorage.getItem('initData')) || []
+
+    //元素对象
+    const uname = document.querySelector('.uname')
+    const age = document.querySelector('.age')
+    const gender = document.querySelector('.gender')
+    const salary = document.querySelector('.salary')
+    const city = document.querySelector('.city')
+    const tbody = document.querySelector('tbody')
+
+    //渲染
+    render()
+
+    // 1.提交表格事件
+    const info = document.querySelector('.info')
+    info.addEventListener('submit', function (e) {
+      // 阻止默认行为
+      e.preventDefault()
+      // 验证表单
+      if (!uname.value || !age.value || !salary.value) {
+        return alert('输入内容不能为空')
+      }
+      // 存储信息，追加到数组
+      initData.push({
+        stuId: initData.length ? initData[initData.length - 1].stuId + 1 : 1,
+        uname: uname.value,
+        age: age.value,
+        gender: gender.value,
+        salary: salary.value,
+        city: city.value,
+        time: new Date().toLocaleString(),
+      })
+      // 把数组存到本地
+      localStorage.setItem('initData', JSON.stringify(initData))
+      //渲染
+      render()
+      // 重置表单
+      this.reset()
+    })
+
+    // 2.渲染功能函数
+    function render() {
+      // 清除原先渲染
+      tbody.innerHTML = ''
+      // 通过map和join渲染
+      const newArr = initData.map(function (ele, index) {
+        return `
+          </tr>
+            <td>${ele.stuId}</td>
+            <td>${ele.uname}</td>
+            <td>${ele.age}</td>
+            <td>${ele.gender}</td>
+            <td>${ele.salary}</td>
+            <td>${ele.city}</td>
+            <td>${ele.time}</td>
+            <td>
+              <a href="javascript:" data-id='${index}'>删除</a>
+            </td>
+          </tr>
+        `
+      })
+      // 配合数组的join方法渲染
+      tbody.innerHTML = newArr.join('')
+      document.querySelector('.count span').innerHTML = newArr.length
+    }
+
+    // 3.删除功能
+    tbody.addEventListener('click', function (e) {
+      // 判断点击的是删除
+      if (e.target.nodeName === 'A') {
+
+        // 确认框确定是否要真的删除
+        if (confirm('确定要真的删除吗？')) {
+          // 根据下标删除
+          initData.splice(e.target.dataset.id, 1)
+          // 重新存储
+          localStorage.setItem('initData', JSON.stringify(initData))
+          // 重新渲染页面
+          render()
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

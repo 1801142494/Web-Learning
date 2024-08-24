@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-location</title>
+</head>
+<body>
+    <a href="https://www.bilibili.com/video/">在5秒后跳转到b站</a>
+    
+    <script>
+        
+        const a =document.querySelector('a')
+        let i=5
+        const t =setInterval(function(){
+            i--
+            a.innerHTML = `在${i}秒后跳转到b站`
+
+            if(i<=0){
+                clearInterval(t)
+                // 通过 location.href 实现跳转
+                location.href ='https://www.bilibili.com/video/'
+            }
+        },1000)
+    </script>
+</body>
+</html>

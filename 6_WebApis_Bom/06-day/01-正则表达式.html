@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = '我在学前端，希望靠前端找到好工作'
+        //1.定义正则表达式
+        const reg = /前端/
+        //2.检测方法
+        reg.test(str)
+        console.log(reg.test(str));
+
+        console.log(reg.exec(str));
+        
+    </script>
+</body>
+</html>

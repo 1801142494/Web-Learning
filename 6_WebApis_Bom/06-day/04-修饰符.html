@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(/java/.test('java'));
+        console.log(/java/i.test('JAVA'));
+        console.log(/JAVA/g.test('JAVA'));
+
+        const str='java是一种编程语言，学完Java工资很高'
+        
+        const re =str.replace(/java/ig,'前端')
+        console.log(re);
+        
+    </script>
+</body>
+</html>
