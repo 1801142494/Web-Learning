@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>框架标签</title>
+</head>
+<body>
+    <!-- 利用iframe嵌入一个网页 -->
+    <!-- <iframe src="https://www.bilibili.com/" frameborder="0" width="500" height="300"></iframe>
+    <br> -->
+    <!-- 利用iframe嵌入一个广告网页 -->
+    <!-- <iframe src="" frameborder="0"></iframe>
+    <br> -->
+    <!-- 利用iframe嵌入一个图片 -->
+    <!-- <iframe src="./resource/ys4.8.mp4" frameborder="0"></iframe>
+    <br> -->
+    <!-- 利用iframe嵌入一个视频 -->
+    <!-- <iframe src="./resource/CuteGirl.gif" frameborder="0"></iframe> -->
+
+    <a href="https://www.bilibili.com/" target="tt">点我去b站</a>
+    <a href="https://www.taobao.com/" target="tt">点我去淘宝</a>
+    
+    <br>
+    <!-- target属性可以和iframe标签的name属性配合使用 -->
+    <form action="https://www.bilibili.com/search" target="tt">
+        <input type="text" name="keyword">
+        <button>搜索</button>
+    </form>
+    <iframe name="tt" frameborder="0" height="300" width="500"></iframe>
+
+</body>
+</html>
