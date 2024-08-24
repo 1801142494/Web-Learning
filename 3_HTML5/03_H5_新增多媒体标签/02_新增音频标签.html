@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>02_新增音频标签</title>
+
+    <style>
+        audio {
+            width: 500px;
+        }
+        .mask {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: gray;
+        }
+
+        .dialog {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: green;
+            font-size: 50px;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        span {
+            border: 1px solid black;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <audio id="music" src="./七里香.mp3" controls></audio>
+
+    <!-- 音频小案例 -->
+    <div class="mask" id="mask">
+        <div class="dialog">
+            <span onclick="go()">随便听听</span>
+        </div>
+    </div>
+
+    <script>
+        function go (){
+            music.play()
+            mask.style.display = 'none'
+        }
+    </script>
+</body>
+</html>
