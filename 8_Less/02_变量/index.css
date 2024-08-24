@@ -1,0 +1,16 @@
+#box {
+  background-color: skyblue;
+  width: 200px;
+  height: 200px;
+  border-style: soild;
+}
+#outer {
+  background-color: skyblue;
+  width: 200px;
+  height: 200px;
+}
+.inner {
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+}

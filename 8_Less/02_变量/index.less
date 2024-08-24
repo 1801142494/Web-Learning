@@ -1,0 +1,30 @@
+// 选择器变量
+@mySelector: #box;
+@outer:outer;
+@inner:inner;
+@color:green;
+@bgcolor:skyblue;
+@bgcolor2:orange;
+@width:200px;
+@height:200px;
+
+// 属性变量
+@boderStyle:border-style;
+@soild:soild;
+
+@{mySelector}{
+    background-color: @bgcolor;
+    width: @width;
+    height: @height;
+    @{boderStyle}:@soild
+}
+#@{outer}{
+    background-color: @bgcolor;
+    width: @width;
+    height: @height;
+}
+.@{inner}{
+    background-color: @bgcolor2;
+    width: @width;
+    height: @height;
+}
