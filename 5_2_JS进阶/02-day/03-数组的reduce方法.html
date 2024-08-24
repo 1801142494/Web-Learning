@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr = [2, 4, 6, 8]
+        // 1.没有初始值
+        // console.log(arr.reduce(function(prev,current){
+        //     return prev+current
+        // }));
+        // 2.有初始值
+        // console.log(arr.reduce(function(prev,current){
+        //     return prev+current
+        // },10));
+        // 3.箭头函数写法
+        // console.log(arr.reduce((prev,current)=> prev+current,10));
+
+
+        // 案例：工资计算
+        const arr = [
+            {
+                name: '张三',
+                salary: 10000
+            },
+            {
+                name: '李四',
+                salary: 10000
+            },
+            {
+                name: '王五',
+                salary: 10000
+            },
+        ]
+
+        // 01.计算工资总额,  注：要写初始值，因为数组的第一个内容是对象
+        const total = arr.reduce((prev, current) => prev + current.salary, 0)
+        console.log('工资支出一共是：' + total);
+        // 02.涨薪30%
+        const total2 = arr.reduce((prev, current) => prev + current.salary * 1.3, 0)
+        console.log('涨薪后一共是：' + total2);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-箭头函数</title>
+</head>
+
+<body>
+
+    <script>
+        //1.语法
+        // 传统函数表达式写法
+        const fn = function () {
+
+        }
+
+        // 写法1
+        const fn1 = () => {
+            console.log('写法1');
+        }
+        fn1()
+
+        // 写法2，只有一个参数时，省略小括号
+        const fn2 = x => {
+            console.log('写法2');
+        }
+        fn2(1)
+
+        //写法3，只有一行函数时，省略大括号和return
+        const fn3 = x => x + x
+        console.log(fn3(1));
+
+        //写法4 加上小括号，可以返回一个对象
+        const fn4 = uname => ({ uname:uname })
+        console.log(fn4('周星驰'));
+    </script>
+</body>
+
+</html>

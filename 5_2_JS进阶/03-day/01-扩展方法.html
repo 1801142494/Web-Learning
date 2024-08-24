@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 自己定义一个数组扩展方法，求和，求最大值
+
+        const arr=[1,2,3]
+
+        Array.prototype.max=function(){
+            // 展开运算符
+            return Math.max(...this)
+        }
+        console.log(arr.max());
+        console.log([2,4,6].max());
+        
+        Array.prototype.min=function(){
+            return Math.min(...this)
+        } 
+        console.log(arr.min());
+        console.log([2,4,6].min());
+
+        Array.prototype.getSum=function(){
+            let sum=0
+            this.forEach(ele=>sum+=ele)
+            return sum
+        }
+        console.log([2,4,6,8].getSum());
+    </script>
+</body>
+</html>

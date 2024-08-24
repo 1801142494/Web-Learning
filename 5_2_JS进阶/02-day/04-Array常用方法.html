@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = ['red', 'blue', 'green']
+        const re = arr.find(item => {
+            return item === 'blue'
+        })
+        console.log(re);
+
+        const arr2 =[
+            {
+                name:'小米',
+                price:1999
+            },
+            {
+                name:'华为',
+                price:2999
+            },
+        ]
+
+        const mi=arr2.find(item=> item.name==='小米')
+        console.log(mi);
+        
+    </script>
+</body>
+
+</html>

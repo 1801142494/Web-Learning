@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-改变this指向</title>
+</head>
+<body>
+    <script>
+        const obj={
+            unme:'pink'
+        }
+        function fn(x,y){
+            console.log(this);
+            console.log(x+y);  
+        }
+        // 1.调用call()函数 改变this指向
+        // fn.call(obj,1,2)
+
+
+        // 2.apply() ,后面必须跟数组
+        // fn.apply(obj,[1,2])
+        // 2.1可用于数组求和
+        // const arr=[100,55,66,44,88]
+        // const max=Math.max.apply(Math,arr);
+        // const min=Math.min.apply(Math,arr);
+        // console.log(max,min);
+
+        // 3.bind()
+    </script>
+</body>
+</html>
