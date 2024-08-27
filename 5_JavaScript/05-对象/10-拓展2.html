@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>语文</td>
+                <td>46</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>数学</td>
+                <td>100</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>英语</td>
+                <td>80</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">暂无内容</td>
+            </tr>
+
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <span>总分：246</span>
+                    <span>平均分：79</span>
+                </td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table> -->
+
+    <script>
+        let arr = [
+            { subject: '语文', score: 46 },
+            { subject: '数学', score: 80 },
+            { subject: '应用', score: 100 }
+        ]
+
+        document.write(`
+             <table>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>科目</th>
+                        <th>成绩</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+        `)
+
+        let sum = 0
+        let avg = 0
+        for (let i = 0; i < arr.length; i++) {
+            document.write(`
+                 <tr>
+                    <td>${i + 1}</td>
+                    <td>${arr[i].subject}</td>
+                    <td>${arr[i].score}</td>
+                    <td>
+                        <a href="#">删除</a>
+                    </td>
+                </tr>
+            `)
+            sum+=arr[i].score
+        }
+
+
+        document.write(`
+                    <tr>
+                        <td colspan="4">暂无内容</td>
+                    </tr>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <span>总分：${sum}</span>
+                            <span>平均分：${parseInt(sum/arr.length)}</span>
+                        </td>
+                    </tr>
+                </tfoot>
+                </tbody>
+            </table>
+        `)
+    </script>
+</body>
+
+</html>

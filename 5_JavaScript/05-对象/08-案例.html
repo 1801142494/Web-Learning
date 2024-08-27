@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渲染在线视频案例</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+
+        }
+        body {
+            background-color: #f3f5f7;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            align-items: center;
+        }
+
+        .top-bar span {
+            color: #666;
+            padding-right: 30px;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+        }
+        .content .box {
+            width: 228px;
+            height: 270px;
+            border: 1px solid #ccc;
+            background-color: white;
+            margin: 5px;
+
+        }
+        .image {
+            width: 228px;
+            height: 128px;
+            background-size: cover;
+        }
+        .title {
+            display: inline-block;
+            width: 228px;
+            height: 100px;
+            padding: 0px 10px;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+        .title-side {
+            padding: 0px 10px;
+        }
+        .title-side span{
+            color: rgb(214, 159, 56);
+        }
+
+        .box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0px 0px 6px black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="top-bar">
+            <h3>精品推荐</h3>
+            <span>查看全部</span>
+        </div>
+        <div class="content">
+
+            <div class="box">
+                <a href="#">
+                    <div class="image" style="background-image: url('./images/bg1.jpg');"></div>
+                    <span class="title">《崩坏：星穹铁道》走近星穹「三月七•巡猎：星穹列车第一神剑」</span>
+                    <div class="title-side">
+                        <span>热门</span>·<span>235万</span>人在看
+                    </div>        
+                </a>
+            </div>
+
+        </div>
+    </div> -->
+
+    <script>
+
+        let arr = [
+            {
+                src: './images/bg1.jpg',
+                title: '《崩坏：星穹铁道》走近星穹——「三月七•巡猎：星穹列车第一神剑」',
+                num: '147万'
+            },
+            {
+                src: './images/bg2.jpg',
+                title: '《崩坏：星穹铁道》云璃角色PV——「误打误撞」',
+                num: '466万'
+            },
+            {
+                src: './images/bg3.jpg',
+                title: '《崩坏：星穹铁道》千星纪游PV：「天干剑燥，小心火炉」',
+                num: '372万'
+            },
+            {
+                src: './images/bg4.jpg',
+                title: '《崩坏：星穹铁道》走近星穹——「云璃：光脚的不怕穿鞋的」',
+                num: '228万'
+            },
+            {
+                src: './images/bg5.jpg',
+                title: '《崩坏：星穹铁道》2.4版本「明霄竞武试锋芒」前瞻特别节目',
+                num: '235万'
+            },
+            {
+                src: './images/bg6.jpg',
+                title: '《崩坏：星穹铁道》2.4版本PV：「明霄竞武试锋芒」',
+                num: '226万'
+            },
+            {
+                src: './images/bg7.jpg',
+                title: '《崩坏：星穹铁道》千星纪游PV：「石心誓环•天平两端」',
+                num: '452万'
+            },
+            {
+                src: './images/bg8.jpg',
+                title: '《崩坏：星穹铁道》翡翠角色PV——「欲望收藏」',
+                num: '271万'
+            }
+        ]
+        
+
+        // 开头
+        document.write(`<div class="container">
+                            <div class="top-bar">
+                                <h3>精品推荐</h3>
+                                <span>查看全部</span>
+                            </div>
+                            <div class="content">
+            `)
+        // 内容
+        for(let i =0 ;i<arr.length;i++){
+            document.write(`
+            <div class="box">
+                <a target="_blank" href="https://www.bilibili.com/video/BV16M4m1y7Yf/?spm_id_from=333.999.0.0&vd_source=9ff50847e7a137cb27cbf5645df0f030">
+                    <div class="image" style="background-image: url(${arr[i].src});"></div>
+                    <span class="title">${arr[i].title}</span>
+                    <div class="title-side">
+                        <span>热门</span>·<span>${arr[i].num}</span>人在看
+                    </div>        
+                </a>
+            </div>
+            `)
+        }
+
+        // 结尾
+        document.write(`
+                            </div>
+                        </div>
+        `)
+    </script>
+</body>
+
+</html>

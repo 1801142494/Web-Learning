@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function getTwoSum(num1 = 0, num2 = 0) {
+            document.write(`${num1 + num2}`)
+        }
+
+        // let num1 = Number(prompt('请输入第一个数：'))
+        // let num2 = Number(prompt('请输入第二个数：'))
+
+        // getTwoSum(5, 10)
+        // document.write(`<br>`)
+        // getTwoSum()
+
+        function getArrSum(arr=[]){
+            let sum =0
+            for(let i=0;i<arr.length;i++){
+                sum+=arr[i]
+            }
+            document.write(sum)
+        }
+
+        let arr =[25,25,15,35]
+        getArrSum(arr)
+    </script>
+</body>
+
+</html>

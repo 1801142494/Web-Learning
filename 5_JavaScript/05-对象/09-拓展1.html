@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container {
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 700px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-items: flex-start;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background-size: cover;
+            border-top-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            transition: 0.3s all linear;
+
+            position: relative;
+        }
+
+        .name {
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            color: gold;
+            display: none;
+        }
+
+        .box:hover {
+            transform: scale(1.2);
+            
+        }
+        .box:hover .name{
+            display: flow-root;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="box" style="background-image: url('../03-day/images/hd1.jpg');">
+            <div class="name">格温</div>
+        </div>
+    </div> -->
+
+    <script>
+
+        let arr=[
+            {src:'../03-day/images/hd1.jpg',name:'格温'},
+            {src:'../03-day/images/hd2.jpg',name:'英雄'},
+            {src:'../03-day/images/hd3.jpg',name:'英雄'},
+            {src:'../03-day/images/hd4.jpg',name:'英雄'},
+            {src:'../03-day/images/hd5.jpg',name:'英雄'},
+            {src:'../03-day/images/hd6.jpg',name:'英雄'},
+            {src:'../03-day/images/hd7.jpg',name:'英雄'},
+            {src:'../03-day/images/hd8.jpg',name:'英雄'},
+            {src:'../03-day/images/hd9.jpg',name:'英雄'},
+            {src:'../03-day/images/hd10.jpg',name:'英雄'},
+            {src:'../03-day/images/hd11.jpg',name:'英雄'},
+            {src:'../03-day/images/hd12.jpg',name:'英雄'},
+            {src:'../03-day/images/hd13.jpg',name:'英雄'},
+            {src:'../03-day/images/hd14.jpg',name:'英雄'},
+            {src:'../03-day/images/hd15.jpg',name:'英雄'},
+            {src:'../03-day/images/hd16.jpg',name:'英雄'},
+            {src:'../03-day/images/hd17.jpg',name:'英雄'},
+            {src:'../03-day/images/hd18.jpg',name:'英雄'},
+            {src:'../03-day/images/hd19.jpg',name:'英雄'},
+            {src:'../03-day/images/hd20.jpg',name:'英雄'}
+        ]
+    
+        document.write(`<div class="container">`)
+
+        for(let i=0;i<arr.length;i++){
+            document.write(`
+               <div class="box" style="background-image: url(${arr[i].src});">
+                    <div class="name">${arr[i].name}</div>
+                </div> 
+            `)
+        }
+        document.write(`  </div>`)
+    </script>
+</body>
+</html>

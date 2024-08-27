@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let num =function(){
+            console.log('调用函数表达式')
+        }
+
+        console.log(num)
+
+        ;(function(x,y){
+            console.log('立即实行函数1') 
+            console.log(x+y) 
+        })(1,2)
+
+        ;(function(x,y){
+            console.log('立即实行函数2') 
+            console.log(x+y) 
+        }(3,5))
+
+        ;(function(){
+
+        })()
+        ;(function(){
+
+        }())
+        ;(function(){
+
+        })()
+        ;(function(){
+
+        }())
+
+        ;(function() {
+
+        })()
+        ;(function(){
+            
+        }())
+    </script>
+</body>
+</html>

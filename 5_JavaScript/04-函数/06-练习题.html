@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function getSum(x, y) {
+            x = x || 0
+            y = y || 0
+            return x + y
+        }
+
+        function changeNum(x, y) {
+            x = x || 0
+            y = y || 0
+            let temp = x
+            x = y
+            y = temp
+            document.write(`交换后：第一个是${x},第二个是${y}`)
+        }
+
+        function result() {
+            let a = prompt('银行卡余额')
+            let b = prompt('当月食宿消费')
+            let c = prompt('当月生活消费')
+            let d = a - b - c
+            document.write(`当前银行卡剩余${d}`)
+            return d
+        }
+
+        function setArr(arr = [], flag = true) {
+            if (flag === true) {
+                let sum = 0
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i]
+                }
+                return sum
+            } else {
+                let sum = 0
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i]
+                }
+                let avg = sum / arr.length
+                return avg
+            }
+        }
+
+        function some(ele, arr = []) {
+            let flag = false
+            for (let i = 0; i < arr.length; i++) {
+                if (ele === arr[i]) {
+                    flag = true
+                }
+            }
+            return flag
+        }
+
+        function findIndex(ele, arr = []) {
+            for (let i = 0; i < arr.length; i++) {
+                if (ele === arr[i]) {
+                    return i
+                }
+            }
+            return -1
+        }
+
+        document.write(findIndex(5,[1,3,6,7]))
+        document.write(findIndex('red',['sky','wave','green','red']))
+
+
+        // document.write(setArr([5,10,10,5],true))
+        // document.write(setArr([5,10,10,5]))
+        // document.write(setArr([5,5,5,5],false))
+
+        // result()
+
+        // let num1 = Number(prompt('请输入第一个数：'))
+        // let num2 = Number(prompt('请输入第一个数：'))
+
+        // document.write(getSum(num1,num2))
+
+        // changeNum(2, 3)
+        // changeNum('red', 'green')
+    </script>
+</body>
+
+</html>
