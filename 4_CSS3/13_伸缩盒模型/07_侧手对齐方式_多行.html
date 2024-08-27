@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>07_侧手对齐方式_多行</title>
+
+    <style>
+        .outer {
+            width: 1000px;
+            height: 1000px;
+            background-color: gray;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            /* 侧轴对对齐方式（多行）---起始位置对齐*/
+            /* align-content: flex-start; */
+
+            /* 侧轴对对齐方式（多行）---结束位置对齐*/
+            /* align-content: flex-end; */
+
+            /* 侧轴对对齐方式（多行）---中间对齐*/
+            /* align-content: center; */
+
+             /* 侧轴对对齐方式（多行）---*/
+             /* align-content: space-around; */
+             /* align-content: space-between; */
+             /* align-content: space-evenly; */
+             align-content: stretch;
+        }
+
+        .inner {
+            width: 200px;
+            /* height: 200px; */
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .inner1 {
+            width: 200px;
+            /* height: 200px; */
+        }
+        .inner2 {
+            font-size: 80px;
+            width: 200px;
+            /* height: 300px; */
+        }
+        .inner3 {
+            width: 200px;
+            /* height: 100px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <span class="inner inner1">1</span>
+        <span class="inner inner2">2</span>
+        <span class="inner inner3">3</span>
+        <span class="inner inner4">4</span>
+        <span class="inner inner5">5</span>
+        <span class="inner inner6">6</span>
+        <span class="inner inner7">7</span>
+        <span class="inner inner8">8</span>
+        <span class="inner inner9">9</span>
+        <span class="inner inner10">10</span>
+        <span class="inner inner11">11</span>
+    </span>
+    </div>
+</body>
+</html>

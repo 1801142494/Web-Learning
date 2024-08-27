@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_过渡和动画的区别</title>
+    <style>
+        .outer {
+            width: 1000px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+        }
+
+        .inner1 {
+          background-color: aquamarine;
+
+          transition: 3s all linear;
+        }
+
+        .inner2 {
+            background-color: orange;
+
+            animation:toRight 3s 0.2s linear 2;
+        }
+
+        .outer:hover .inner1 {
+            transform: translateX(900px) rotate(360deg);
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        @keyframes toRight {
+            0%{
+
+            }
+            50% {
+                background-color: red;
+            }
+            100% {
+                transform: translateX(900px) rotate(360deg);
+                border-radius: 50%;
+                background-color: rebeccapurple;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner inner1"></div>
+        <div class="inner inner2"></div>
+    </div>
+</body>
+</html>
