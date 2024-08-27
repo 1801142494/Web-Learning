@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://www.bilibili.com/">
+        <input type="submit" value="到b站">
+    </form>
+
+    <a href="https://www.bilibili.com/">bilibili</a>
+    <script>
+        const form =document.querySelector('form')
+        form.addEventListener('submit',function(e){
+            // 阻止默认行为
+            e.preventDefault()
+        })
+
+        const a =document.querySelector('a')
+        a.addEventListener('click',function(e){
+
+            e.preventDefault()
+        })
+    </script>
+</body>
+</html>

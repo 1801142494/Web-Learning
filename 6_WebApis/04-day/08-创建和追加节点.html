@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建节点</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+    </ul>
+
+    <script>
+        // 1.创建元素节点
+        const li =document.createElement('li')
+        li.innerHTML = '我是追加的节点'
+
+        // 2.追加节点（追加到父元素的末尾）
+        const ul =document.querySelector('ul')
+        ul.appendChild(li)
+        // 3.插入节点
+        const li2 =document.createElement('li')
+        li2.innerHTML = '我是插入的节点'
+        ul.insertBefore(li2,ul.children[0])
+        
+    </script>
+</body>
+</html>

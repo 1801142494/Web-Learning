@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <script>
+        const btn =document.querySelector('button')
+
+        function fn (){
+            alert('点击了按钮')
+        }
+        btn.addEventListener('click',fn)
+
+        // 移除事件
+        // btn.removeEventListener('click',fn)
+    </script>
+</body>
+</html>

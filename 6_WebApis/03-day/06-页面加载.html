@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.等待全部资源加载后执行
+        window.addEventListener('load',function(){
+            // const btn =document.querySelector('button')
+            // btn.addEventListener('click',function(){
+            //     alert('111')
+            // })
+        })
+
+        // 1.等待文档加载后执行
+        document.addEventListener('DOMContentLoaded',function(){
+            const btn =document.querySelector('button')
+            btn.addEventListener('click',function(){
+                alert('111')
+            })
+        })
+        
+    </script>
+
+    <button>按钮</button>
+</body>
+</html>
