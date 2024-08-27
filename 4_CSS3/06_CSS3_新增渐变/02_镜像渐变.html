@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>02_镜像渐变</title>
+
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .box1 {
+            background-image: radial-gradient(red,yellow,green);
+        }
+
+        .box2 {
+            background-image: radial-gradient(at left top,red,yellow,green);
+        }
+
+        .box3 {
+            background-image: radial-gradient(at 100px 50px,red,yellow,green);
+
+        }
+
+        .box4 {
+            background-image: radial-gradient(circle,red,yellow,green);
+
+        }
+
+        .box5 {
+            background-image: radial-gradient(200px 200px,red,yellow,green);
+        }
+
+        .box6 {
+            background-image: radial-gradient(red 50px,yellow 100px,green 150px);
+        }
+
+        .box7 {
+            background-image: radial-gradient(100px 50px at 150px 150px ,red 50px,yellow 100px,green 150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">默认情况</div>
+    <div class="box box2">通过关键词调整镜像渐变圆心</div>
+    <div class="box box3">通过坐标调整镜像渐变圆心</div>
+    <div class="box box4">通过cricle调整为正圆</div>
+    <div class="box box5">通过坐标调整为正圆</div>
+    <div class="box box6">调整镜像渐变区域</div>
+    <div class="box box7">综合写法</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>03_文本溢出</title>
+
+    <style>
+        ul {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            font-size: 20px;
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            /* 实现文字过长，以省略号显示 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>祝贺！黄雨婷获得巴黎奥运会射击女子10米气步枪银牌</li>
+        <li>1.5元只能骑10分钟，多地共享单车上调起步价</li>
+        <li>后半程突然“崩盘”，覃海洋怎么了？本人回应：可能是太想赢了</li>
+        <li>奥运早报｜张雨霏夺女子100米蝶泳铜牌，覃海洋无缘蛙泳奖牌</li>
+        <li>云南-人生必去一次的地方，美到窒息！（内附行程攻略+报价）xxxxxxxxxxxxxxxx</li>
+    </ul>
+</body>
+</html>

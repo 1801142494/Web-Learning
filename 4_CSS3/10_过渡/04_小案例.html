@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_小案例</title>
+
+    <style>
+        .outer {
+            width: 400px;
+            height: 250px;
+
+            position: relative;
+            overflow: hidden;
+        }
+        img {
+            width: 400px;
+            height: 250px;
+
+            transition: 1s linear;
+        }
+        .mask {
+            width: 400px;
+            height: 250px;
+            background-color: black;
+            line-height: 250px;
+            text-align: center;
+            color: white;
+            font-size: 60px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+
+            transition: 1s linear;
+        }
+
+        .outer:hover .mask {
+            opacity: 0.5;
+        }
+        .outer:hover img {
+            transform: rotate(10deg) scale(1.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="../images/shangqiu.jpg" alt="商丘">
+        <div class="mask">商丘</div>
+    </div>
+</body>
+</html>

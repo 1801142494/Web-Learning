@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>03_复合使用</title>
+
+    <style>
+        .outer{
+            width: 1000px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .inner {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+
+            /* 顺序任意，但第一个时间是过渡时间，第二个是延迟 */
+            transition: 3s 0.5s all linear;
+        }
+
+        .outer:hover .inner {
+            width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>
