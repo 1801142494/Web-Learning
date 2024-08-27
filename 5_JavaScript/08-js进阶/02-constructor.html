@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-constructor</title>
+</head>
+<body>
+    <script>
+        function Star(){
+
+        }
+        console.log(Star.prototype);
+        // 当要对原型赋值多个方法，可以直接赋值个对象
+        Star.prototype={
+            // 但这时原型的constructor会消失，失去指向，需要重新指向构造函数
+            constructor:Star,
+            sing:function(){
+                console.log('唱歌');
+            },
+            dance:function(){
+                console.log('跳舞');
+            }
+        }
+
+        console.log(Star.prototype);
+    </script>
+</body>
+</html>

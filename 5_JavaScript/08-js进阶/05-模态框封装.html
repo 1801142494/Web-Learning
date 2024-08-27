@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-模态框封装</title>
+    <style>
+        .modal {
+            width: 350px;
+            height: 120px;
+            border: 1px solid #d4d4d4;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        .modal .header {
+            width: 350px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0 10px;
+            line-height: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .modal .header span {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .modal .body {
+            width: 350px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            font-size: 16px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="modal">
+        <div class="header">标题</div><span>X</span>
+        <div class="body">内容</div>
+    </div> -->
+    <button class="del">删除</button>
+    <button class="logon">登录</button>
+
+    <script>
+        // 1.Modal构造函数封装
+        function Modal(title = '', message = '') {
+            // 1.1创建  div标签
+            this.modalBox = document.createElement('div')
+            // 1.2给div标签添加类名
+            this.modalBox.className = 'modal'
+            // 1.3给div填充内容
+            this.modalBox.innerHTML = `
+                <div class="header">${title}<span>X</span></div>
+                <div class="body">${message}</div>
+            `
+        }
+
+        // 2.给原型对象添加通用方法
+        Modal.prototype.open = function () {
+            // 判断页面中是否有modal盒子，如果有先删除
+            const box =document.querySelector('.modal')
+            box && box.remove()
+            document.body.appendChild(this.modalBox)
+
+            // 要等盒子显示再关闭
+            this.modalBox.querySelector('span').addEventListener('click', () => {
+                // 箭头函数没有this，这个this指向上级的this
+                this.close()
+            })
+        }
+        Modal.prototype.close = function () {
+            // this.modalBox.remove()
+            document.body.removeChild(this.modalBox)
+        }
+
+        // 3.按钮点击事件
+        document.querySelector('.del').addEventListener('click', () => {
+            const del = new Modal('温馨提示', '你没有权限的删除')
+            del.open()
+        })
+        document.querySelector('.logon').addEventListener('click', () => {
+            const logon = new Modal('友情提示', '你还没有注册')
+            logon.open()
+        })
+    </script>
+</body>
+
+</html>

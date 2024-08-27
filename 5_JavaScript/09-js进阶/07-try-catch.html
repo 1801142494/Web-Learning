@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-try-catch</title>
+</head>
+<body>
+    <p>123</p>
+    <script>
+        function fn(){
+            try{
+                // 可能错误的代码，写到try
+                const p =document.querySelector('.p')
+                p.style.color ='red'
+            }catch(err){
+                // 拦截错误，提示浏览器提供的错误信息，但不中断程序
+                console.log(err.message);
+
+                throw new Error('选择器错误了')
+                // 需要加return 中断程序
+                // return
+            }
+            finally{
+                // 不管程序对不对，一定会执行的代码
+                alert('弹出对话框')
+            }
+            console.log(111);
+            
+        }
+        fn()
+    </script>
+    
+</body>
+</html>
