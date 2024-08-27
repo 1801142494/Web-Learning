@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>小兔鲜儿 - 新鲜 惠民 快捷!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_1939705_bgtmkonu28.css"> -->
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/product.css">
+</head>
+
+<body>
+  
+  <div class="xtx-wrapper">
+    <div class="container">
+      <!-- 面包屑 -->
+      <div class="xtx-bread">
+        <a href="javascript:;"> 首页 > </a>
+        <a href="javascript:;"> 电子产品 > </a>
+        <a href="javascript:;"> 电视 > </a>
+        <span>小米电视4A 32英寸</span>
+      </div>
+      <!-- 商品信息 -->
+      <div class="xtx-product-info">
+        <div class="left">
+          <div class="pictrue">
+            <div class="middle">
+              <img src="./images/1.jpg" alt="">
+              <div class="layer"></div>
+            </div>
+            <div class="small">
+              <ul>
+                <li class="active"><img src="./images/1.jpg" alt=""></li>
+                <li><img src="./images/2.jpg" alt=""></li>
+                <li><img src="./images/3.jpg" alt=""></li>
+                <li><img src="./images/4.jpg" alt=""></li>
+                <li><img src="./images/5.jpg" alt=""></li>
+              </ul>
+            </div>
+            <div class="large"></div>
+          </div>
+          <div class="other">
+            <ul>
+              <li>
+                <p>销量人气</p>
+                <p>1999+</p>
+                <p>销量人气</p>
+              </li>
+              <li>
+                <p>商品评价</p>
+                <p>999+</p>
+                <p>查看评价</p>
+              </li>
+              <li>
+                <p>收藏人气</p>
+                <p>299+</p>
+                <p><a href="javascript:;">收藏商品</a></p>
+              </li>
+              <li>
+                <p>品牌信息</p>
+                <p>小米</p>
+                <p><a href="javascript:;">品牌主页</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <h3 class="name">小米电视4A 32英寸</h3>
+          <p class="desc">全面屏设计 / 高清分辨率 / 海量内容 / 1G+4G大内存 / 多核处理器</p>
+          <p class="price"><span class="now">¥1899</span><span class="old">¥2999</span></p>
+          <div class="address">
+            <div class="item">
+              <div class="dt">促销</div>
+              <div class="dd">12月好物放送，App领券购买直降120元</div>
+            </div>
+            <div class="item">
+              <div class="dt">配送</div>
+              <div class="dd">至
+                <div class="box">
+                  <span>陕西 西安 <i></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">服务</div>
+              <div class="dd">
+                <span class="fw">无忧退货</span>
+                <span class="fw">快速退款</span>
+                <span class="fw">免费包邮</span>
+                <a href="#" class="lj">了解详情</a>
+              </div>
+            </div>
+          </div>
+          <div class="attrs">
+            <div class="item">
+              <div class="dt">颜色</div>
+              <div class="dd">
+                <img src="./images/cate-06.png" alt="">
+                <img src="./images/cate-07.png" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">颜色</div>
+              <div class="dd">
+                <span class="size">22英寸</span>
+                <span class="size">42英寸</span>
+                <span class="size">52英寸</span>
+                <span class="size">62英寸</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">数量</div>
+              <div class="dd">
+                <div class="num">
+                  <a href="javascript:;">-</a>
+                  <input type="text" value="1">
+                  <a href="javascript:;">+</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <a class="buy" href="javascript:;">立即购买</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1.获取三个元素
+    const small = document.querySelector('.small')
+    const middle = document.querySelector('.middle')
+    const large = document.querySelector('.large')
+
+    //2.鼠标滑到小盒子，左侧显示对应的大盒子
+    const ul = document.querySelector('.small ul')
+    ul.addEventListener('mouseover', function (e) {
+      if (e.target.nodeName === 'IMG') {
+        // 清除原有样式，设置新样式
+        this.querySelector('.active').classList.remove('active')
+        e.target.classList.add('active')
+
+        // 把中盒子的图片设置成小盒子
+        middle.querySelector('img').src = e.target.src
+        // 把大盒子的图片换成小盒子
+        large.style.backgroundImage = `url(${e.target.src})`
+      }
+    })
+
+    // 3.经过中盒子，显示隐藏 大盒子
+    middle.addEventListener('mouseenter', show)
+    middle.addEventListener('mouseleave', hide)
+    // 设置定时器，实现鼠标从中盒子到大盒子，大盒子不消失
+    let timeId = 0
+
+    // 进入的函数
+    function show() {
+      clearTimeout(timeId)
+      large.style.display = 'block'
+    }
+    // 离开的函数
+    function hide() {
+      timeId = setTimeout(function () {
+        large.style.display = 'none'
+      }, 200)
+    }
+
+    // 4.经过大盒子，显示隐藏 大盒子
+    large.addEventListener('mouseenter', show)
+    large.addEventListener('mouseleave', hide)
+
+    // 5.鼠标经过黑色盒子，显示隐藏 黑色遮罩
+    const layer = document.querySelector('.layer')
+    middle.addEventListener('mouseenter', function () {
+      layer.style.display = 'block'
+    })
+    middle.addEventListener('mouseleave', function () {
+      layer.style.display = 'none'
+    })
+
+    // 6.移动黑色遮罩
+    middle.addEventListener('mousemove', function (e) {
+      // 鼠标在盒子里的坐标 = 鼠标在页面的坐标-middle盒子在页面的坐标
+      let x = e.pageX - middle.getBoundingClientRect().left
+      let y = e.pageY - middle.getBoundingClientRect().top - document.documentElement.scrollTop
+
+      // 黑色遮罩移动在middle盒子里  限定移动距离
+      if (x >= 0 && x <= 400 && y >= 0 && y <= 400) {
+        // 声明两个变量  黑色盒子移动的变量
+        let mx = 0, my = 0
+        if (x < 100) mx = 0
+        if (x >= 100 && x <= 300) mx = x - 100
+        if (x > 300) mx = 300 - 100
+
+        if (y < 100) yx = 0
+        if (y >= 100 & y <= 300) my = y - 100
+        if (y > 300) my = 300 - 100
+
+        layer.style.left = mx + 'px'
+        layer.style.top = my + 'px'
+
+        //大盒子的背景要跟随中等盒子移动
+        large.style.backgroundPositionX =-2*mx+'px'
+        large.style.backgroundPositionY =-2*my+'px'
+      }
+    })
+  </script>
+</body>
+
+</html>

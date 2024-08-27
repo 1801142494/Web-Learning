@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-屏蔽词小案例</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <div></div>
+
+    <script>
+        const tx =document.querySelector('textarea')
+        const btn =document.querySelector('button')
+        const div =document.querySelector('div')
+
+        btn.addEventListener('click',function(){
+            const re = tx.value.replace(/基情|激情/g,'**')    
+            div.innerHTML = re
+        })
+    </script>
+</body>
+</html>

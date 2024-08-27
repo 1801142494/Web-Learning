@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map和join</title>
+</head>
+<body>
+    <script>
+        const arr=['red','blue','pink']
+
+        // 1.数组 map方法
+        const newArr = arr.map(function(ele,index){
+            console.log(ele)
+            console.log(index)
+            return ele+'颜色'
+        })
+        console.log(newArr);
+
+        // 2.数组的 join方法
+        console.log(newArr.join());
+        console.log(newArr.join(''));
+        console.log(newArr.join('|'));
+
+
+        
+    </script>
+</body>
+</html>
