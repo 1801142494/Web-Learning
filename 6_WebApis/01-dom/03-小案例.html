@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer {
+            background-image: url('./images/bg.jpg');
+            width: 800px;
+            height: 550px;
+            background-size: cover;
+            overflow: hidden;
+            text-align: center;
+            padding-top: 200px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer">
+        <strong>传智教育年会抽奖</strong>
+        <h1>一等奖：<span class="one">???</span></h1>
+        <h3>二等奖: <span class="two">???</span></h3>
+        <h5>三等奖: <span class="three">???</span></h5>
+    </div>
+
+    <script>
+        const arr = ['周杰伦', '刘德华', '周星驰', '胡歌', '杨幂']
+        
+        const one =document.querySelector('.one')
+        const random1 =Math.floor(Math.random()*arr.length)
+        one.innerText = arr[Math.floor(Math.random()*arr.length)]
+        arr.slice(random1,1)
+
+
+        const two =document.querySelector('.two')
+        const random2 =Math.floor(Math.random()*arr.length)
+        two.innerText = arr[random2]
+        arr.slice(random2,1)
+
+        
+        const three =document.querySelector('.three')
+        const random3 =Math.floor(Math.random()*arr.length)
+        three.innerText = arr[random3]
+        arr.slice(random3,1)
+
+    </script>
+</body>
+
+</html>
