@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>02_字体族</title>
+
+    <style>
+        .bt1 {
+            font-size: 50px;
+            font-family: "微软雅黑";
+        }
+
+        .bt2 {
+            font-size: 50px;
+            font-family: "楷体";
+        }
+
+        .bt3 {
+            font-size: 50px;
+            font-family: "宋体";
+        }
+
+        .bt4 {
+            font-size: 50px;
+            font-family: "华文彩云";
+        }
+
+        .bt5 {
+            font-size: 50px;
+
+            /* 可以设置多个用逗号隔开 这就是字体族*/
+            /* 注：一个字体族，是否是衬线字体要统一*/
+            font-family: "华文彩云","微软雅黑","华文琥珀";
+        }
+
+        .bt6 {
+            font-size: 50px;
+            /* sans-serif表示前面的字体都失效时，告诉浏览器随便拿个对应字体
+                sans-serif 非衬线
+                serif 衬线
+            
+            */
+            font-family: "Microsoft YaHei","华文琥珀",sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="bt1">星穹铁道</div>
+    <div class="bt2">星穹铁道</div>
+    <div class="bt3">星穹铁道</div>
+    <div class="bt4">星穹铁道</div>
+    <div class="bt5">星穹铁道</div>
+    <div class="bt6">星穹铁道</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器优先级_详细聊</title>
+
+    <style>
+        #test #ys{
+            color: blue;
+        }
+        #ys{
+            color: orange;
+        }
+        .container span.ys{
+            color: red;
+        }
+        div>p>span:first-child{
+            color: green;
+        }
+
+        /* important权重最大>行内>....*/
+        .ys{
+            color: purple !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="test">
+        <p>
+            <span class="ys" id="ys" style="color: yellow;">原来你也玩原神！</span>
+            <span>原来你也玩崩坏星穹铁道！</span>
+        </p>
+        
+    </div>
+   
+</body>
+</html>

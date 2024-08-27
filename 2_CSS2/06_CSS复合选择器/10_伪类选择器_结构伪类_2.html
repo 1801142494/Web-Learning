@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>10_伪类选择器_结构伪类_2</title>
+
+    <style>
+        /* 选中的是div的最后一个儿子p元素（按照所有兄弟计算的）---结构1*/
+        div>p:last-child {
+            color: red;
+        }
+
+        /* 选中的是div的第n个儿子p元素（按照所有兄弟计算的）---结构1*/
+        /* div>p:nth-child(3) {
+            color: red;
+        } */
+
+        /*  格式：an+b
+            偶数2n
+            奇数2n+1 
+            前n个：-n+n*/
+        /* div>p:nth-child(-n+5){
+            color: red;
+        } */
+
+        /*  第一个这种类型的元素*/
+        div>p:first-of-type {
+            color: red;
+        }
+         /*  最后一个这种类型的元素*/
+        div>p:last-of-type {
+            color: green;
+        }
+
+        div>p:nth-of-type(2){
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>测试</span>
+        <p>小明1</p>
+        <p>小明2</p>
+        <p>小明3</p>
+        <p>小明4</p>
+        <p>小明5</p>
+        <p>小明6</p>
+        <p>小明7</p>
+        <p>小明8</p>
+        <p>小明9</p>
+        <p>小明10</p>
+        <span>测试</span>
+    </div>
+</body>
+
+</html>

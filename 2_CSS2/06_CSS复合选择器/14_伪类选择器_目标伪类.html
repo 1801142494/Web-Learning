@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>14_伪类选择器_目标伪类</title>
+    <style>
+        div {
+            background-color: gray;
+            height: 300px;
+        }
+
+        /* 目标伪类，跳转后变色*/
+        div:target {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- 通过锚点跳转 -->
+    <a href="#one">去看第1个</a>
+    <a href="#two">去看第2个</a>
+    <a href="#three">去看第3个</a>
+    <a href="#four">去看第4个</a>
+    <a href="#five">去看第5个</a>
+    <a href="#six">去看第6个</a>
+
+    <div id="one">第1个</div>
+    <div id="two">第2个</div>
+    <div id="three">第3个</div>
+    <div id="four">第4个</div>
+    <div id="five">第5个</div>
+    <div id="six">第6个</div>
+</body>
+</html>
