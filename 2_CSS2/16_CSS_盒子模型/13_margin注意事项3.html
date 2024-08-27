@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>13_margin注意事项3</title>
+
+    <style>
+      .one {
+        background-color: skyblue;
+      }
+      .two {
+        background-color: green;
+        margin-left: 30px;
+        margin-right: 30px;
+
+        /* 对于行内元素，左右外边距能够完美设置，
+            上下外边距是无效的 */
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .three {
+        background-color: orange;
+      }
+
+    </style>
+</head>
+<body>
+  <span class="one">123</span>
+  <span class="two">456</span>
+  <span class="three">789</span>
+
+  <div>Lorem ipsum dolor sit amet consectetur.</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>25_行内元素之间空白问题</title>
+    <!-- 行内元素和行内块元素之间会出现空白 -->
+
+    <style>
+
+        /* 解决方法：
+            父元素font-size设置为0 */
+            body {
+                font-size: 0px;
+            }
+        span {
+            background-color: green;
+            font-size: 50px;
+        }
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <span>123</span>
+    <span>123</span>
+    <span>123</span>
+    <hr>
+    <img src="../images/喜羊羊.jpg" alt="喜羊羊">
+    <img src="../images/喜羊羊.jpg" alt="喜羊羊">
+    <img src="../images/喜羊羊.jpg" alt="喜羊羊">
+</body>
+</html>

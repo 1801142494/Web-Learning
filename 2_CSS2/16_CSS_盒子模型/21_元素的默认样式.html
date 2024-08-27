@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>21_元素的默认样式</title>
+
+    <style>
+        #d1 {
+            /* 继承的样式优先级比自带的低 */
+            font-size: 50px;
+            color: orange;
+        }
+
+        a {
+            color: orange;
+            cursor: default;
+            text-decoration: none;
+        }
+
+        body {
+            /* body默认margin外边距8px */
+            background-color: skyblue;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+         <a href="https://www.baidu.com/">去百度</a>
+         <span>你好啊</span>
+         <hr>
+
+        <h1>一级标题</h1>
+        <h2>二级标题</h2>
+        <hr>
+        <p>我是一个段落</p>
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+</body>
+</html>

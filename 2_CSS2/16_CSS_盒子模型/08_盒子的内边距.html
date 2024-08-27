@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_盒子的内边距</title>
+
+    <style>
+        #d1 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: skyblue;
+
+            /* padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px; */
+
+            /*  padding---
+                复合属性，一个值含义：四个方向都是一样
+                复合属性，二个值含义：上下，左右
+                复合属性，三个值含义：上，左右，下
+                复合属性，四个值含义：上，右，下，左
+            */
+            padding: 10px 20px 30px 10px;
+        }
+
+        span {
+            background-color: orange;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            /* 行内元素的上下内边距不占位，会引起重叠 */
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">原神启动</div>
+    <br>
+    <span>我很好</span>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, a!</div>
+
+</body>
+</html>

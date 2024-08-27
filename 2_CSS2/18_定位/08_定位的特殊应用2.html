@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_定位的特殊应用2</title>
+    <!-- 通过绝对定位进行垂直居中 -->
+
+    <style>
+        .outer {
+            height: 400px;
+            width: 500px;
+            background-color: gray;
+            position: relative;
+        }
+
+        .inner {
+            height: 100px;
+            width: 200px;
+            background: orange;
+            font-size: 20px;
+
+            position: absolute;
+            /* 方案一（推荐） */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            /* 方案二 */
+            /* left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -50px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">你好123</div>
+    </div>
+</body>
+</html>

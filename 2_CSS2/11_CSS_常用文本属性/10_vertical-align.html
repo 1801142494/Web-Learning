@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>10_vertical-align</title>
+
+    <style>
+        div {
+            font-size: 40px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        span {
+            font-size: 20px;
+            background-color: orange;
+            /* vertical-align不能控制块元素 */
+            vertical-align: middle;
+        }
+
+        img {
+            height: 20px;
+            vertical-align: middle;
+        }
+
+       .san {
+        vertical-align: bottom;
+       }
+
+       .test {
+        vertical-align: bottom;
+       }
+    </style>
+</head>
+
+<body>
+    <div>
+        atguigu尚硅谷
+        <span>x前端</span>
+    </div>
+    <hr>
+    <div>
+        atguigu尚硅谷x<img src="../images/喜羊羊.jpg" alt="图片">
+    </div>
+    <hr>
+
+    <table border="1" cellspacing="0">
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr height="150px">
+                <td class="san">张三</td>
+                <td>18</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>lisi</td>
+                <td>18</td>
+                <td>女</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <span class="test">测试</span>
+    </div>
+
+</body>
+
+</html>
