@@ -1,25 +1,6 @@
-//type 可以给任何变量创造别名
+//类型声明文件
+// 通过.d.ts的文档声明，使得js的库ts也可以用
+import {add,mul} from './demo.js'
 
-// 1.基本用法
-// type num=number
-
-// let price:num
-// price=100
-
-//2.联合类型
-// type Status=number | string
-// type Gender='男' | '女'
-
-// function printStatus(data:Status){
-//     console.log(data);
-// }
-// function printGender(data:Gender){
-//     console.log(data);
-// }
-
-// printStatus(404)
-// printStatus("404")
-// printGender('男')
-// printGender('女')
-
-//3.交叉类型（并且类型）
+console.log(add(1,2));
+console.log(mul(3,4));
